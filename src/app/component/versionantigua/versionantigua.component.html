@@ -1,0 +1,135 @@
+<div class="container">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Interpolacion
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>{{nombre}}</p>
+                </div>
+                <div class="container">
+                    <h1>Data binding: </h1>
+                    <p>Es usar ngModel pare referirnos a un valor en un input</p>
+                    <p>Sacamos un valor de un input y jugamos desde ts</p>
+                    <input type="text" [(ngModel)]="cajaTexto" class="form-control">
+                    <p *ngIf="cajaTexto!=''">El valor es: {{cajaTexto}}</p>
+                    <ul *ngFor="let letter of cajaTexto.split('') ">
+                        <li>{{letter}}</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    ngClass
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div class="container">
+                        <h1>ngClass</h1>
+                        <p>simple: [ngClass]="class", class =propiedad ts </p>
+                        <p>Array: [ngClass]=[n,m,x] </p>
+                        <p>Objecto: [ngClass]=&#123;class:validation&#125; </p>
+                        <h4>Example</h4>
+                        <pre><code class="language-typescript">{{ classCompoent  }}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    INPUT
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div class="container">
+                        <h1>INPUT</h1>
+                        <p> Literalmente solo se necesita pasar por parametros la informacion desde el padre</p>
+                        <pre><code class="language-typescript">{{ inputcomponent  }}</code></pre>
+                        <p>En el hijo la cosa va asi <br></p>
+                        <pre><code class="language-typescript">{{ inputCode  }}</code></pre>
+
+                        <app-lista nombre="primary" classButton="btn btn-primary" />
+                        &nbsp;&nbsp;
+                        <app-lista nombre="success" classButton="btn btn-success" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                    OUTPUT
+                </button>
+            </h2>
+            <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div class="container">
+                        <h1>OUTPUT</h1>
+                        <p>Son dos partes una el padre y otra el Hijo, trabajo mayor hijo</p>
+                        <b>
+                            <p>Hijo</p>
+                        </b>
+
+                        <ol>
+                            <li>crear el decorador Input e inicializar</li>
+                            <li>crear metodo o evento que dispare el emit</li>
+                            <li>Emitir</li>
+                        </ol>
+
+                        <pre><code class="language-typescript">{{ outputcomponent  }}</code></pre>
+                        <h4>Llamado padre</h4>
+                        <pre><code class="language-typescript">{{ outputcomponentAdd  }}</code></pre>
+
+                        <br><br>
+                        <h4>informacion($event)</h4>
+                        informacion(informacion: any) &#123;
+                        this.list.push(informacion)
+                        &#125;
+
+                        <pre><code class="language-typescript">{{ codigoEjemplo  }}</code></pre>
+
+
+
+                        <app-formulario-paises (DATA)="informacion($event)"></app-formulario-paises>
+                        <ul *ngFor="let item of list">
+                            <li>{{item}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                    nn
+                </button>
+            </h2>
+            <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
